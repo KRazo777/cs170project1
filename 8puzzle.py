@@ -161,13 +161,13 @@ def main():
     if solution_node:
         path = trace_solution(solution_node)
 
-        for step in path:
+        for step in path[:-1]:
             print(f"The best state to expand with a g(n) = {step.g_cost} and h(n) = {step.h_cost} is")
             for row in step.puzzle:
                 print(row)
             print()
             
-        print("Goal state!")
+        print("Goal state Reached!")
         print("Solution depth was", solution_node.g_cost)
         print("Number of nodes expanded:", expanded)
         print("Max queue size:", max_q)
